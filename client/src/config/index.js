@@ -149,7 +149,7 @@ export const filterOptions = {
     label: 'Seeds'
     },
     {
-      id: 'plant-Protectors',
+      id: 'Plant-Protectors',
     label: 'Plant-Protectors'
     },
     {

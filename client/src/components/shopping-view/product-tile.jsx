@@ -1,18 +1,18 @@
-import { Badge } from "lucide-react";
+import { Badge } from "../ui/badge";
 import { Card, CardContent, CardFooter } from "../ui/card";
 import { Button } from "../ui/button";
 
 
 
-function ShoppingProductTile({product}) {
+function ShoppingProductTile({product,handleGetProductDetails,handleAddtoCart}) {
     return (
         <Card className= "w-full max-w-sm mx-auto">
             
-            <div>
+            <div onClick={()=>handleGetProductDetails(product?._id)}>
                <div className="relative">
                 <img src={product?.image}
                 alt={product?.title}
-                className="w-dull h-[300px] object-cover rounded-t-lg"/>
+                className="w-full h-[300px] object-cover rounded-t-lg"/>
                 {
                    product?.salePrice > 0 ? (
                    <Badge className="absolute top-2 left-2 bg-red-500 hover:bg-red-500">
@@ -23,7 +23,7 @@ function ShoppingProductTile({product}) {
 
                <CardContent className="p-4">
                 <h2 className="text-xl font-bold mb-2">
-                    {product?.tile}
+                    {product?.title}
                 </h2>
 
                 <div className="flex justify-between items-center mb-2">
@@ -45,13 +45,10 @@ function ShoppingProductTile({product}) {
             ) : null}
                 </div>
                </CardContent>
-
-
-               <CardFooter>
-                <Button className="w-full">Add to Cart</Button>
-               </CardFooter>
             </div>
-
+            <CardFooter>
+                <Button onClick={()=>handleAddtoCart(product?._id)} className="w-full">Add to Cart</Button>
+            </CardFooter>
 
         </Card>
     );
