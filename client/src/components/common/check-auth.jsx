@@ -18,7 +18,7 @@ function CheckAuth({isAuthenticated, user, children})
 }
 
 
-/**ifuser is already authenticated**/
+// if user is already authenticated
 
 if(isAuthenticated && 
     (
