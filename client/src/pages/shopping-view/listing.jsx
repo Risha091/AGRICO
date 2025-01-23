@@ -64,7 +64,7 @@ function ShoppingListing () {
 
   useEffect (()=>{
     setSort("price-lowtohigh");
-    setFilters(JSON.parse(sessionStorage.getItem(filters))||{});
+    setFilters(JSON.parse(sessionStorage.getItem("filters"))||{});
 
   },[]);
 
